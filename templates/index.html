@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake News Detection</title>
+    </head>
+    <body>
+    <div class="container">
+        <div style="background:transparent !important" class="jumbotron">
+            <div style="font-family: 'Times New Roman', cursive;">
+                <p>
+                <center>
+                    <font size="8">FakeNews Detection using LSTM Neural Network</font>
+                </center>
+            </div>
+        </div>
+
+        <div>
+            <h3>Enter News here: </h3>
+            {{ request.form['txt'] }}
+        </div>
+    </div>
+
+        <form action="/" method="POST">
+            <textarea name="txt" rows="0" cols="0">
+            </textarea>
+            <input type="submit" name="Submit">
+        </form>
+
+        <div>
+            <h3> Predicted Results :</h3>
+            <p>{% if result == 0 %}
+            <p style="color: red;">The given news is Fake</p>
+            {% else  %}
+            <p><p style="color:green;">The given news True</p>
+            {% endif %}
+        </div>
+
+    </body>
+</html>
