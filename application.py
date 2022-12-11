@@ -4,8 +4,9 @@ import re
 import string
 import pandas as pd
 
-app = Flask(__name__)
-Model = joblib.load("model.pkl")
+application = Flask(__name__)
+app = application
+Model = joblib.load("pickles\model.pkl")
 
 
 @app.route('/')
